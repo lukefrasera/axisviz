@@ -1,0 +1,11 @@
+[package]
+name = "axes_tests"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { version = "0.17.2", features = ["serialize", "wayland", "bevy_gizmos", "bevy_render", "bevy_pbr", "bevy_core_pipeline"]}
+bevy_panorbit_camera = "0.32"
+serde = { version = "1.0.228", features = ["derive"] }
+clap = { version = "4.5.51" , features = ["derive"]}
+nalgebra = { version = "0.34.1", features = ["serde-serialize"]}
