@@ -2,6 +2,13 @@
 name = "axes_tests"
 version = "0.1.0"
 edition = "2024"
+authors = ["Luke Fraser"]
+
+[package.metadata.wix]
+upgrade-guid = "380D06CC-27DE-488F-9588-38CAAF2FB8DF"
+path-guid = "9401F86F-7FE7-4B40-B80C-35DC6DC1669C"
+license = false
+eula = false
 
 [dependencies]
 bevy = { version = "0.17.2", features = ["serialize", "wayland", "bevy_gizmos", "bevy_render", "bevy_pbr", "bevy_core_pipeline"]}
@@ -9,3 +16,15 @@ bevy_panorbit_camera = "0.32"
 serde = { version = "1.0.228", features = ["derive"] }
 clap = { version = "4.5.51" , features = ["derive"]}
 nalgebra = { version = "0.34.1", features = ["serde-serialize"]}
+anyhow = { version = "1.0.100"}
+serde_json = "1.0.144"
+thiserror = "*"
+bevy_debug_grid = "0.8.0"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+[target.wasm32-unknown-unknown]
+runner = "wam-server-runner"
