@@ -1,5 +1,5 @@
 [package]
-name = "axes_tests"
+name = "axisviz"
 version = "0.1.0"
 edition = "2024"
 authors = ["Luke Fraser"]
